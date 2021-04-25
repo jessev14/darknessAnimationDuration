@@ -13,8 +13,8 @@ game.modules.get("darknessAnimationDuration").api.customDarknessDuration(darknes
 ```
 
 # Technical Notes
-A socket is used to initate the animation on other clients. The `LightingLayer#animateDarkness` core function is used to initiate animation on current client).
-After animation, the scene darkness is manually updated.
+A socket is used to initate the animation on other clients. The `LightingLayer#animateDarkness` core function is used to initiate animation on the current client.
+After animation ends the scene darkness is manually updated.
 
 I submitted [this issue](https://gitlab.com/foundrynet/foundryvtt/-/issues/4715) to the core Foudndry repo so I fully expect this module to become obsolete at some point.
 I've just been using this for my own purposes and thought I might as well clean it up and share.
