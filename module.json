@@ -15,5 +15,8 @@
             "name": "English",
             "path": "lang/en.json"
         }
-    ]
+    ],
+    "url": "https://github.com/jessev14/darknessAnimationDuration",
+    "manifest": "https://github.com/jessev14/darknessAnimationDuration/releases/latest/download/module.json",
+    "download": "https://github.com/jessev14/darknessAnimationDuration/releases/download/1.0.0/darknessAnimationDuration.zip"
 }
