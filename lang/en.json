@@ -1,0 +1,17 @@
+{
+    "darknessAnimationDuration.dialog": {
+        "target": "Darkness Level (0.0 - 1.0)",
+        "duration": "Duration (msec)",
+        "confirm": "Confirm",
+        "cancel": "Cancel"
+    },
+    "darknessAnimationDuration.settings": {
+        "customTool": {
+            "name": "Enable custom animation button in light toolbar"
+        },
+        "defaultDuration": {
+            "name": "Default duration for Day and Night buttons in light toolbar",
+            "hint": "Foundry default: 10000msec (10sec)."
+        }
+    }
+}
