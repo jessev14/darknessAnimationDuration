@@ -65,7 +65,6 @@ async function darknessAnimationDialog() {
                 callback: async (html) => {
                     const target = parseFloat(html.find("#target").val() || parseFloat(html.find("#target").attr("placeholder")));
                     const duration = parseFloat(html.find("#duration").val() || parseFloat(html.find("#duration").attr("placeholder")));
-                    console.log({sceneDarkness: game.scenes.viewed.data.darkness, target, duration});
                     if (game.scenes.viewed.data.darkness === target) return;
                     await customDuration(target, duration);
                 }
@@ -88,7 +87,6 @@ async function darknessAnimationDialog() {
    * @param {number} duration   The desired animation time in milliseconds.
    */
 async function customDuration(target = 1.0, duration) {
-    //console.log({target, duration})
     if (canvas.lighting._animating) return;
     if (game.scenes.viewed.data.darkness === target) return;
     if (!duration) duration = game.settings.get("darknessAnimationDuration", "defaultDuration");
