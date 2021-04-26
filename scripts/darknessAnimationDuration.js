@@ -49,7 +49,6 @@ Hooks.once("ready", () => {
 
 async function darknessAnimationDialog() {
     const buttonPosition = $(document).find("li.control-tool[data-tool='customTransition']").offset();
-    console.log(buttonPosition)
     const options = {
         width: 300,
         top: buttonPosition.top,
@@ -63,8 +62,9 @@ async function darknessAnimationDialog() {
             confirm: {
                 label: game.i18n.localize("darknessAnimationDuration.dialog.confirm"),
                 callback: async (html) => {
-                    const target = parseInt(html.find("#target").val() || html.find("#target").attr("placeholder"));
-                    const duration = parseInt(html.find("#duration").val() || html.find("#duration").attr("placeholder"));
+                    const target = parseFloat(html.find("#target").val() || parseFloat(html.find("#target").attr("placeholder")));
+                    const duration = parseFloat(html.find("#duration").val() || parseFloat(html.find("#duration").attr("placeholder")));
+                    console.log({sceneDarkness: game.scenes.viewed.data.darkness, target, duration});
                     if (game.scenes.viewed.data.darkness === target) return;
                     await customDuration(target, duration);
                 }
@@ -87,6 +87,7 @@ async function darknessAnimationDialog() {
    * @param {number} duration   The desired animation time in milliseconds.
    */
 async function customDuration(target = 1.0, duration) {
+    //console.log({target, duration})
     if (canvas.lighting._animating) return;
     if (game.scenes.viewed.data.darkness === target) return;
     if (!duration) duration = game.settings.get("darknessAnimationDuration", "defaultDuration");
