@@ -25,8 +25,9 @@ Hooks.on("getSceneControlButtons", (controls) => {
     const bar = controls.find(c => c.name === "lighting");
     bar.tools.find(t => t.name === "day").onClick = () => customDuration(0, defaultDuration);
     bar.tools.find(t => t.name === "night").onClick = () => customDuration(1.0, defaultDuration);
+    const index = bar.tools.findIndex(t => t.name === "night");
     if (game.settings.get("darknessAnimationDuration", "customTool")) {
-        bar.tools.splice(3, 0, {
+        bar.tools.splice(index + 1, 0, {
             name: "customTransition",
             title: "Custom Transition",
             icon: "far fa-sun",
