@@ -9,6 +9,7 @@
     "esmodules": [
         "scripts/darknessAnimationDuration.js"
     ],
+    "socket": true,
     "languages": [
         {
             "lang": "en",
