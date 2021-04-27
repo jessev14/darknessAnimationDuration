@@ -87,6 +87,7 @@ async function darknessAnimationDialog() {
    * @param {number} duration   The desired animation time in milliseconds.
    */
 async function customDuration(target = 1.0, duration) {
+    if (!game.user.isGM) return;
     if (canvas.lighting._animating) return;
     if (game.scenes.viewed.data.darkness === target) return;
     if (!duration) duration = game.settings.get("darknessAnimationDuration", "defaultDuration");
